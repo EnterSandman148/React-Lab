@@ -1,3 +1,5 @@
+import { BeakerIcon, GlobeEuropeAfricaIcon } from '@heroicons/react/24/solid'
+
 const menuItems = [
   {
     title: 'Home',
@@ -23,12 +25,19 @@ const menuItems = [
 
 export default function Navbar() {
   return (
-    <div className="flex justify-end gap-4 m-6">
-      {menuItems.map((item, index) => (
-        <a key={index} href={item.href} className="px-4 py-2 bg-gray-100 shadow-md rounded-md">
-          {item.title}
-        </a>
-      ))}
+    <div className="flex justify-between items-center gap-6 m-12">
+      <GlobeEuropeAfricaIcon className="h-12 w-12 text-emerald-600" />
+      <div className="flex gap-4">
+        {menuItems.map((item, index) => (
+          <a
+            key={index}
+            href={item.href}
+            className="px-4 py-2 bg-gray-100 shadow-md rounded-md text-lg font-bold hover:bg-emerald-400 active:bg-emerald-600 transition-all"
+          >
+            {item.title}
+          </a>
+        ))}
+      </div>
     </div>
   )
 }
