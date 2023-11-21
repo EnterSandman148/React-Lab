@@ -6,27 +6,36 @@ const menuItems = [
     href: '/',
   },
   {
-    title: 'About',
-    href: '/about',
+    title: 'History',
+    href: '/history',
   },
   {
-    title: 'Contact',
-    href: '/contact',
+    title: 'Anatomy',
+    href: '/anatomy',
   },
   {
-    title: 'Services',
-    href: '/services',
+    title: 'Behavior',
+    href: '/behavior',
   },
   {
-    title: 'Products',
-    href: '/products',
+    title: 'Conservation',
+    href: '/conservation',
   },
 ]
 
 export default function Navbar() {
   return (
-    <div className="flex justify-between items-center gap-6 m-12">
-      <GlobeEuropeAfricaIcon className="h-12 w-12 text-emerald-600" />
+    <div className="flex justify-between align-center items-center gap-6 m-12">
+      <a href="/">
+        <img
+          src="./icon.png"
+          className="bg-gray-100 px-3 hover:bg-emerald-200 active:bg-emerald-500 transition-all shadow-md rounded-md"
+          width={75}
+          height={75}
+          alt="All About Elephants"
+        ></img>
+      </a>
+      <h1 className="text-5xl mr-40 font-bold text-slate-100">All About Elephants</h1>
       <div className="flex gap-4">
         {menuItems.map((item, index) => (
           <a
