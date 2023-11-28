@@ -1,18 +1,14 @@
 import Image from 'next/image'
 import Navbar from './components/Navbar'
 import PageTitle from './components/PageTitle'
-import PageContent from './components/PageContent'
 import Footer from './components/Footer'
 import Card from './components/card'
-import { createClient } from '@supabase/supabase-js'
-
-const supabase = createClient('https://xpomgalaosneveajkczq.supabase.co', process.env.SUPABASE_SERVICE_ROLE_KEY)
+import { findCards } from './utils/supabase-client'
 
 export const revalidate = 0
 
 export default async function Home() {
-  const { data: cards, error } = await supabase.from('cards').select('*')
-
+  const cards = await findCards()
   return (
     <div>
       <Navbar />
