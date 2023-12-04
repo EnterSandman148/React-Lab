@@ -37,7 +37,9 @@ export default async function Anatomy() {
         <PageTitle title="Anatomy" />
         <PageContent content="This is about the anatomy of elephants" />
         <CardForm />
-        <MyTable columns={cardTableColumns} records={cards} />
+        <div className="bg-slate-100 rounded-md mt-5 p-4">
+          <MyTable columns={cardTableColumns} records={cards} />
+        </div>
         <Footer />
       </div>
     </div>
