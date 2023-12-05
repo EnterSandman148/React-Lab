@@ -1,9 +1,9 @@
 import Navbar from '../components/Navbar'
 import PageTitle from '../components/PageTitle'
+import PageContent from '../components/PageContent'
 import Footer from '../components/Footer'
 import Card from '../components/card'
 import { findBehavior } from '../utils/supabase-client'
-import PageContent from '../components/PageContent'
 
 export const revalidate = 0
 
@@ -13,16 +13,11 @@ export default async function Behavior() {
     <div>
       <Navbar />
       <div className="m-12">
-        <PageTitle title="Home" />
-        <div className="flex justify-between flex-wrap gap-6">
+        <PageTitle title="Behavior" />
+        <PageContent content="Learn about the fascinating and unqiue behaviors of elephants." />
+        <div className="flex flex-wrap justify-start gap-9">
           {cards.map((card, index) => (
-            <Card
-              key={index}
-              title={card.title}
-              subtitle={card.subtitle}
-              image={card.image}
-              description={card.description}
-            />
+            <Card key={index} title={card.title} subtitle={card.description} image={card.image} />
           ))}
         </div>
         <Footer />

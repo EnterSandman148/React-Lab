@@ -1,7 +1,7 @@
 export default function Card({
   title = 'Placeholder Title',
   subtitle = 'Placeholder SubTitle',
-  description = 'Placeholder Description',
+  description = '',
   image = 'http://placekitten.com/400/300',
 }) {
   return (
