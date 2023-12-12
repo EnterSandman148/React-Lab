@@ -7,12 +7,24 @@ export function getClient() {
 
 export async function insertCard(card) {
   const supabase = getClient()
-  const { error } = await supabase.from('cards').insert(card)
+  const { error } = await supabase.from('conservation').insert(card)
 }
 
 export async function findCards() {
   const supabase = getClient()
+  const { data: cards, error } = await supabase.from('conservation').select()
+  return cards
+}
+
+export async function findHomeCards() {
+  const supabase = getClient()
   const { data: cards, error } = await supabase.from('cards').select()
+  return cards
+}
+
+export async function findAnatomy() {
+  const supabase = getClient()
+  const { data: cards, error } = await supabase.from('anatomy').select()
   return cards
 }
 

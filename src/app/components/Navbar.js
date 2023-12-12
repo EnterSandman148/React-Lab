@@ -6,12 +6,12 @@ const menuItems = [
     href: '/',
   },
   {
-    title: 'History',
-    href: '/history',
-  },
-  {
     title: 'Anatomy',
     href: '/anatomy',
+  },
+  {
+    title: 'History',
+    href: '/history',
   },
   {
     title: 'Behavior',

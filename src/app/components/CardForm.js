@@ -7,35 +7,35 @@ import { redirect } from 'next/navigation'
 
 async function createCard(formData) {
   'use server'
-  const title = formData.get('title')
-  const subtitle = formData.get('subtitle')
+  const organization = formData.get('organization')
+  const website = formData.get('website')
   const image = formData.get('image')
   const description = formData.get('description')
-  insertCard({ title, subtitle, image, description })
-  redirect('/')
+  insertCard({ organization, website, image, description })
+  redirect('/conservation')
 }
 
 export default function CardForm() {
   return (
-    <form action={createCard} className="p-8 bg-emerald-700 rounded-lg mt-4">
+    <form action={createCard} className="p-8 bg-emerald-600 rounded-lg mt-4 mb-4">
       <Field>
-        <Label label="title" />
-        <Input id="title" name="title" />
+        <Label label="Organization" />
+        <Input id="organization" name="organization" />
       </Field>
       <Field>
-        <Label label="subtitle" />
-        <Input id="subtitle" name="subtitle" />
+        <Label label="Website" />
+        <Input id="website" name="website" />
       </Field>
       <Field>
-        <Label label="image" />
+        <Label label="Image" />
         <Input id="image" name="image" />
       </Field>
       <Field>
-        <Label label="description" />
+        <Label label="Description" />
         <Input id="description" name="description" />
       </Field>
-      <div className="mt-4 flex justify-end">
-        <Button type="submit">Add Card</Button>
+      <div className="mt-6 flex justify-start font-bold">
+        <Button type="submit">Add Organization</Button>
       </div>
     </form>
   )
